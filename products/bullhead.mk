@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Include custom telephony configuration
-include vendor/flash/configs/custom_phone.mk
+include vendor/pixN/configs/custom_phone.mk
 
 # Inherit AOSP device configuration for bullhead
 $(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)

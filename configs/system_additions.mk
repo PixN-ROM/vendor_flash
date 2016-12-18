@@ -14,17 +14,17 @@
 
 # init.d script support
 PRODUCT_COPY_FILES += \
-    vendor/flash/prebuilt/bin/sysinit:system/bin/sysinit
+    vendor/pixN/prebuilt/bin/sysinit:system/bin/sysinit
 
 # Pure-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/flash/prebuilt/etc/init.custom.rc:root/init.custom.rc
+    vendor/pixN/prebuilt/etc/init.custom.rc:root/init.custom.rc
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/flash/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/flash/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/flash/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/pixN/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/pixN/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/pixN/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Security Enhanced Linux
 PRODUCT_PROPERTY_OVERRIDES += \

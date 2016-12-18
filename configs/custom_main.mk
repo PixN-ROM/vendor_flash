@@ -14,7 +14,7 @@
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/flash/overlay/common
+    vendor/pixN/overlay/common
 
 # Main Required Packages
 PRODUCT_PACKAGES += \

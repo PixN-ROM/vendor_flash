@@ -1,5 +1,6 @@
 # Copyright (C) 2016 The Pure Nexus Project
 # Copyright (C) 2016 Flash ROM
+# Copyright (C) 2016 PixN ROM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
 # limitations under the License.
 
 ROM_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d-%H%M)
-ROM_NAME := flash_rom
+ROM_NAME := pixN_rom
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rom.version=$(ROM_VERSION)
