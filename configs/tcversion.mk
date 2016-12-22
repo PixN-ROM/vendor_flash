@@ -7,11 +7,7 @@ ifeq (Linux,$(UNAME))
 endif
 
 ifeq (linux,$(HOST_OS))
-  PROP_CLANG_VERSION := $(shell prebuilts/clang/host/$(HOST_PREBUILT_TAG)/$(LLVM_PREBUILTS_VERSION)/bin/clang --version | grep "clang " 2>&1)
-
-  space :=
-  space +=
-  PROP_CLANG_VERSION := $(subst $(space),-,$(strip $(PROP_CLANG_VERSION)))
+  PROP_CLANG_VERSION := $(shell prebuilts/clang/host/$(HOST_PREBUILT_TAG)/$(LLVM_PREBUILTS_VERSION)/bin/clang --version | grep "clang " | cut -d ' ' -f 3 2>&1)
 
   ADDITIONAL_BUILD_PROPERTIES += \
     ro.build.clang=$(PROP_CLANG_VERSION)
@@ -26,16 +22,10 @@ ifeq (linux,$(HOST_OS))
     PROP_GCC_VERSION_NUMBER := $(shell $(PROP_GCC_PATH)/bin/arm-linux-androideabi-gcc -dumpversion 2>&1)
     PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161% 20170% 20171%,$(PROP_GCC_VERSION))
 
-    ifneq ($(filter (UBERTC%),$(PROP_GCC_VERSION)),)
-      PROP_GCC_NAME := UBERTC
-    else
-      PROP_GCC_NAME := GCC
-    endif
-
     ifeq (,$(PROP_GCC_DATE))
-      PROP_GCC_TEXT := $(PROP_GCC_NAME)-$(PROP_GCC_VERSION_NUMBER)
+      PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)
     else	
-      PROP_GCC_TEXT := $(PROP_GCC_NAME)-$(PROP_GCC_VERSION_NUMBER)-$(PROP_GCC_DATE)
+      PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)-$(PROP_GCC_DATE)
     endif
 
     ADDITIONAL_BUILD_PROPERTIES += \
@@ -53,16 +43,11 @@ ifeq (linux,$(HOST_OS))
     PROP_GCC_VERSION := $(shell $(PROP_GCC_PATH)/bin/aarch64-linux-android-gcc --version)
     PROP_GCC_VERSION_NUMBER := $(shell $(PROP_GCC_PATH)/bin/aarch64-linux-android-gcc -dumpversion 2>&1)
     PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161%,$(PROP_GCC_VERSION))
-    ifneq ($(filter (UBERTC%),$(PROP_GCC_VERSION)),)
-      PROP_GCC_NAME := UBERTC
-    else
-      PROP_GCC_NAME := GCC
-    endif
 
     ifeq (,$(PROP_GCC_DATE))
-      PROP_GCC_TEXT := $(PROP_GCC_NAME)-$(PROP_GCC_VERSION_NUMBER)
+      PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)
     else
-      PROP_GCC_TEXT := $(PROP_GCC_NAME)-$(PROP_GCC_VERSION_NUMBER)-$(PROP_GCC_DATE)
+      PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)-$(PROP_GCC_DATE)
     endif
 
     ADDITIONAL_BUILD_PROPERTIES += \
