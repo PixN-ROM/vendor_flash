@@ -20,7 +20,7 @@ ifeq (linux,$(HOST_OS))
     PROP_GCC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_GCC_VERSION)
     PROP_GCC_VERSION := $(shell $(PROP_GCC_PATH)/bin/arm-linux-androideabi-gcc --version 2>&1)
     PROP_GCC_VERSION_NUMBER := $(shell $(PROP_GCC_PATH)/bin/arm-linux-androideabi-gcc -dumpversion 2>&1)
-    PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161% 20170% 20171%,$(PROP_GCC_VERSION))
+    PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161% 20170% 20171% 20180% 20181%,,$(PROP_GCC_VERSION))
 
     ifeq (,$(PROP_GCC_DATE))
       PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)
@@ -42,7 +42,7 @@ ifeq (linux,$(HOST_OS))
 
     PROP_GCC_VERSION := $(shell $(PROP_GCC_PATH)/bin/aarch64-linux-android-gcc --version)
     PROP_GCC_VERSION_NUMBER := $(shell $(PROP_GCC_PATH)/bin/aarch64-linux-android-gcc -dumpversion 2>&1)
-    PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161%,$(PROP_GCC_VERSION))
+    PROP_GCC_DATE := $(filter 20150% 20151% 20160% 20161% 20170% 20171% 20180% 20181%,,$(PROP_GCC_VERSION))
 
     ifeq (,$(PROP_GCC_DATE))
       PROP_GCC_TEXT := $(PROP_GCC_VERSION_NUMBER)
