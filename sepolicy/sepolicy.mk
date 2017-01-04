@@ -4,4 +4,4 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/flash/sepolicy
+    vendor/pixN/sepolicy

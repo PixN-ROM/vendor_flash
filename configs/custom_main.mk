@@ -14,7 +14,7 @@
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/flash/overlay/common
+    vendor/pixN/overlay/common
 
 # Main Required Packages
 PRODUCT_PACKAGES += \
@@ -43,5 +43,5 @@ EXCLUDE_SYSTEMUI_TESTS := true
 
 # Copy Superuser files
 PRODUCT_COPY_FILES += \
-    vendor/flash/prebuilt/sbin/su:root/sbin/su \
-    vendor/flash/prebuilt/app/Superuser/Superuser.apk:system/app/Superuser/Superuser.apk
+    vendor/pixN/prebuilt/sbin/su:root/sbin/su \
+    vendor/pixN/prebuilt/app/Superuser/Superuser.apk:system/app/Superuser/Superuser.apk

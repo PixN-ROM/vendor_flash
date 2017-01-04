@@ -22,4 +22,4 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include vendor/flash/configs/tcversion.mk
+include vendor/pixN/configs/tcversion.mk

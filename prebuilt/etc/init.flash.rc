@@ -84,10 +84,10 @@ on property:sys.boot_completed=1
    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1708800
    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-   # Big cluster governor - flash
+   # Big cluster governor - pixN
    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-   write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor flash
+   write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor pixN
    # Big cluster min - 633 MHz
    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
@@ -113,21 +113,21 @@ on property:sys.boot_completed=1
    write /sys/devices/system/cpu/cpu0/cpufreq/impulse/max_freq_hysteresis 166667
 
    # Big cluster settings
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/go_hispeed_load 90
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/above_hispeed_delay 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/timer_rate 20000
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/hispeed_freq 1440000
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/timer_slack -1
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/target_loads "74 768000:73 864000:64 960000:80 1248000:61 1344000:69 1440000:64 1536000:74 1632000:69 1728000:67 1958400:72"
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/min_sample_time 30000
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/ignore_hispeed_on_notif 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/boost 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/fast_ramp_down 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/align_windows 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/use_migration_notif 1
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/use_sched_load 0
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/max_freq_hysteresis 20000
-   write /sys/devices/system/cpu/cpu4/cpufreq/flash/boostpulse_duration 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/go_hispeed_load 90
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/above_hispeed_delay 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/timer_rate 20000
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/hispeed_freq 1440000
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/timer_slack -1
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/target_loads "74 768000:73 864000:64 960000:80 1248000:61 1344000:69 1440000:64 1536000:74 1632000:69 1728000:67 1958400:72"
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/min_sample_time 30000
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/ignore_hispeed_on_notif 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/boost 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/fast_ramp_down 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/align_windows 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/use_migration_notif 1
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/use_sched_load 0
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/max_freq_hysteresis 20000
+   write /sys/devices/system/cpu/cpu4/cpufreq/pixN/boostpulse_duration 0
 
    # Input boost settings
    write /sys/module/cpu_boost/parameters/input_boost_enabled 1

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Include custom telephony configuration
-include vendor/flash/configs/custom_phone.mk
+include vendor/pixN/configs/custom_phone.mk
 
 # Inherit AOSP device configuration for angler
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
@@ -33,10 +33,10 @@ GRAPHITE_OPTS := true
 
 # Copy over our ramdisk files
 PRODUCT_COPY_FILES += \
-    vendor/flash/prebuilt/etc/init.flash.rc:root/init.flash.rc \
-    vendor/flash/prebuilt/etc/init.performance_profiles.rc:root/init.performance_profiles.rc \
-    vendor/flash/prebuilt/etc/init.special_power.sh:root/init.special_power.sh \
-    vendor/flash/prebuilt/etc/msm_irqbalance.conf:root/msm_irqbalance.conf
+    vendor/pixN/prebuilt/etc/init.pixN.rc:root/init.pixN.rc \
+    vendor/pixN/prebuilt/etc/init.performance_profiles.rc:root/init.performance_profiles.rc \
+    vendor/pixN/prebuilt/etc/init.special_power.sh:root/init.special_power.sh \
+    vendor/pixN/prebuilt/etc/msm_irqbalance.conf:root/msm_irqbalance.conf
 
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
